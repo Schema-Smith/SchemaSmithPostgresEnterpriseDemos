@@ -1,1 +1,0 @@
-CREATE SCHEMA IF NOT EXISTS pg_toast_temp_32;
