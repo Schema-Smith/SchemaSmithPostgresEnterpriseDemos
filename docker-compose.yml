@@ -1,0 +1,54 @@
+services:
+  quench-validproduct:
+    image: schemasmithyfree/schemaquenchpostgresenterprisedemo:latest
+    environment:
+      - SmithySettings_Target__Server=demoserver
+      - SmithySettings_Target__User=${PostGreSQL_USERNAME}
+      - SmithySettings_Target__Password=${PostGreSQL_PASSWORD}
+      - SmithySettings_SchemaPackagePath=/metadata
+    volumes:
+      - ./ValidProduct:/metadata
+    depends_on:
+      demoserver:
+        condition: service_healthy
+
+  quench-dvdrental:
+    image: schemasmithyfree/schemaquenchpostgresenterprisedemo:latest
+    environment:
+      - SmithySettings_Target__Server=demoserver
+      - SmithySettings_Target__User=${PostGreSQL_USERNAME}
+      - SmithySettings_Target__Password=${PostGreSQL_PASSWORD}
+      - SmithySettings_SchemaPackagePath=/metadata
+    volumes:
+      - ./DVDRental:/metadata
+    depends_on:
+      demoserver:
+        condition: service_healthy
+
+  demoserver:
+    image: postgres:latest # Use the latest PostgreSQL image
+    ports:
+      - "${PostGreSQL_PORT:-5432}:5432"
+    environment:
+      POSTGRES_DB: TestMain
+      POSTGRES_USER: ${PostGreSQL_USERNAME}
+      POSTGRES_PASSWORD: ${PostGreSQL_PASSWORD}
+      PGPASSWORD: ${PostGreSQL_PASSWORD}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${PostGreSQL_USERNAME} -d postgres"]
+      interval: 60s
+      timeout: 3s
+      retries: 10
+      start_period: 60s
+
+  completed:
+    image: alpine
+    entrypoint: ["echo"]
+    command: ["completed"]
+    depends_on:
+      demoserver:
+        condition: service_healthy
+      quench-validproduct:
+        condition: service_completed_successfully
+      quench-dvdrental:
+        condition: service_completed_successfully
