@@ -1,2 +1,2 @@
 INSERT INTO "SchemaSmith"."TestLog" ("Msg")
-  VALUES('dbo.MyProcedure.sql')
+  VALUES('public.MyView.sql')

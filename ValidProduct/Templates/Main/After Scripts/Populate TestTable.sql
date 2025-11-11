@@ -1,14 +1,37 @@
-/*
-DECLARE @TableData VARCHAR(MAX) = '{{TestTableData}}'
+DO $$
+DECLARE 
+  v_json JSON = '{{TestTableData}}';
+  nextval BIGINT;
+BEGIN
+ 
+ 
+MERGE INTO "public"."TestTable" AS "Target"
+USING (
+    WITH my_tables(arr) AS (VALUES(v_json::JSON))
+    SELECT (elem ->> 'DateCreated')::timestamp AS "DateCreated",
+           (elem ->> 'SomeText')::varchar(2000) AS "SomeText",
+           (elem ->> 'ParentID')::uuid AS "ParentID",
+           (elem ->> 'TestID')::uuid AS "TestID",
+           (elem ->> 'Status')::smallint AS "Status"
+      FROM my_tables, JSON_ARRAY_ELEMENTS(arr) AS elem
+) AS "Source"
+ON "Source"."TestID" = "Target"."TestID"
 
-insert dbo.testtable (datecreated, parentid, sometext, [status], testid)
-  select datecreated, parentid, sometext, [status], testid
-    from openjson(@tabledata) with (
-      [datecreated] datetime '$.datecreated',
-      [sometext] varchar(2000) '$.sometext',
-      [parentid] uniqueidentifier '$.parentid',
-      [testid] uniqueidentifier '$.testid',
-      [status] tinyint '$.status'
-      ) t
-    where not exists (select * from {{testquerytoken}}.dbo.testtable tt where tt.testid = t.testid)
-*/
+ WHEN NOT MATCHED BY TARGET THEN
+   INSERT (
+         "DateCreated",
+        "SomeText",
+        "ParentID",
+        "TestID",
+        "Status"
+   )
+  VALUES (
+         "Source"."DateCreated",
+        "Source"."SomeText",
+        "Source"."ParentID",
+        "Source"."TestID",
+        "Source"."Status"
+   )
+ ;
+
+END $$ LANGUAGE plpgsql;

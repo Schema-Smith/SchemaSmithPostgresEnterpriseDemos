@@ -69,6 +69,6 @@
       "Expression": "\"Status\" < 20"
     }
   ],
-  "ContentFile": "Tables/dbo.TestTable.tabledata",
+  "ContentFile": "Tables/public.TestTable.tabledata",
   "MergeType": "Insert/Update"
 }
