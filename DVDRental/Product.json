@@ -1,6 +1,6 @@
 {
   "Name": "DVDRental",
-  "ValidationScript": "SELECT CAST(CASE WHEN EXISTS(SELECT * FROM pg_database WHERE datistemplate = false AND datname IN ('{{DVDRentalDb}}', 'TestMain')) THEN 1 ELSE 0 END AS BIT)",
+  "ValidationScript": "SELECT EXISTS(SELECT * FROM pg_database WHERE datname IN ('{{DVDRentalDb}}', 'TestMain'))",
   "TemplateOrder": [
     "Initialize",
     "DVDRental"
@@ -11,5 +11,8 @@
   "ScriptFolders": [],
   "BranchNameFile": "{{repo_path}}\\.git\\HEAD",
   "BeforeBranchNameMask": "ref: refs/heads/",
-  "DropUnknownIndexes": false
+  "AfterBranchNameMask": "",
+  "DropUnknownIndexes": false,
+  "BaselineValidationScript": "",
+  "VersionStampScript": ""
 }

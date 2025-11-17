@@ -1,6 +1,7 @@
 {
   "Name": "DVDRental",
-  "DatabaseIdentificationScript": "SELECT datname FROM pg_database WHERE datistemplate = false AND datname LIKE '{{DVDRentalDb}}%'",
+  "DatabaseIdentificationScript": "SELECT datname FROM pg_database WHERE datname LIKE '{{DVDRentalDb}}%'",
+  "VersionStampScript": "",
   "IndexOnlyTableQuenches": false,
   "ScriptFolders": [
     {
@@ -66,5 +67,6 @@
   ],
   "ServerToQuench": "Primary",
   "ScriptTokens": {},
-  "UpdateFillFactor": true
+  "UpdateFillFactor": true,
+  "BaselineValidationScript": ""
 }
