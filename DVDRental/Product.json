@@ -9,10 +9,11 @@
     "DVDRentalDb": "DVDRental"
   },
   "ScriptFolders": [],
-  "BranchNameFile": "{{repo_path}}\\.git\\HEAD",
+  "BranchNameFile": "{{repo_path}}\\..\\.git\\HEAD",
   "BeforeBranchNameMask": "ref: refs/heads/",
   "AfterBranchNameMask": "",
   "DropUnknownIndexes": false,
   "BaselineValidationScript": "",
-  "VersionStampScript": ""
+  "VersionStampScript": "",
+  "Platform": "PostgreSQL"
 }

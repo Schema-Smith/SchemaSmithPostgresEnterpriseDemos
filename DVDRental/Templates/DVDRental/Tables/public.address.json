@@ -7,6 +7,7 @@
       "DataType": "varchar(50)",
       "Nullable": false,
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "EXTENDED",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -17,6 +18,7 @@
       "DataType": "varchar(50)",
       "Nullable": true,
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "EXTENDED",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -28,6 +30,7 @@
       "Nullable": false,
       "Default": "nextval('address_address_id_seq'::regclass)",
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "PLAIN",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -38,6 +41,7 @@
       "DataType": "int2",
       "Nullable": false,
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "PLAIN",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -48,6 +52,7 @@
       "DataType": "varchar(20)",
       "Nullable": false,
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "EXTENDED",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -59,6 +64,7 @@
       "Nullable": false,
       "Default": "now()",
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "PLAIN",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -69,6 +75,7 @@
       "DataType": "varchar(20)",
       "Nullable": false,
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "EXTENDED",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -79,6 +86,7 @@
       "DataType": "varchar(10)",
       "Nullable": true,
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "EXTENDED",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -93,8 +101,16 @@
       "UniqueConstraint": false,
       "Clustered": false,
       "IndexColumns": "address_id",
+      "IncludeColumns": "",
       "AccessMethod": "btree",
-      "ShouldApplyExpression": ""
+      "FilterExpression": "",
+      "ShouldApplyExpression": "",
+      "FillFactor": 0,
+      "NullsNotDistinct": false,
+      "Deferrable": false,
+      "InitiallyDeferred": false,
+      "UpdateFillFactor": false,
+      "Inherit": false
     },
     {
       "Name": "idx_fk_city_id",
@@ -103,8 +119,16 @@
       "UniqueConstraint": false,
       "Clustered": false,
       "IndexColumns": "city_id",
+      "IncludeColumns": "",
       "AccessMethod": "btree",
-      "ShouldApplyExpression": ""
+      "FilterExpression": "",
+      "ShouldApplyExpression": "",
+      "FillFactor": 0,
+      "NullsNotDistinct": false,
+      "Deferrable": false,
+      "InitiallyDeferred": false,
+      "UpdateFillFactor": false,
+      "Inherit": false
     }
   ],
   "ForeignKeys": [
@@ -116,10 +140,41 @@
       "RelatedColumns": "city_id",
       "ShouldApplyExpression": "",
       "DeleteAction": "",
-      "UpdateAction": ""
+      "UpdateAction": "",
+      "Deferrable": false,
+      "InitiallyDeferred": false,
+      "MatchType": "FULL"
     }
   ],
   "CheckConstraints": [],
+  "Statistics": [
+    {
+      "Name": "ST_Test",
+      "Kind": "",
+      "StatisticsColumns": "address,address2,phone",
+      "ShouldApplyExpression": ""
+    }
+  ],
+  "ExcludeConstraints": [
+    {
+      "Name": "excl_Test",
+      "AccessMethod": "",
+      "ExcludeColumns": [
+        {
+          "Column": "address_id",
+          "Operator": "="
+        },
+        {
+          "Column": "lower(address::text)",
+          "Operator": "="
+        }
+      ],
+      "FilterExpression": "",
+      "ShouldApplyExpression": "",
+      "Deferrable": false,
+      "InitiallyDeferred": false
+    }
+  ],
   "ShouldApplyExpression": "",
   "ContentFile": "Table Contents/public.address.tabledata",
   "MergeType": "Insert/Update",
@@ -130,5 +185,7 @@
   "RowLevelSecurity": false,
   "ForceRowLevelSecurity": false,
   "AccessMethod": "heap",
-  "PersistenceType": "Logged"
+  "PersistenceType": "Logged",
+  "UpdateFillFactor": false,
+  "FillFactor": 0
 }
