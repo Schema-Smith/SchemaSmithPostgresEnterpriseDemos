@@ -8,6 +8,7 @@
       "Nullable": false,
       "Default": "nextval('actor_actor_id_seq'::regclass)",
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "PLAIN",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -18,6 +19,7 @@
       "DataType": "varchar(45)",
       "Nullable": false,
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "EXTENDED",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -28,6 +30,7 @@
       "DataType": "varchar(45)",
       "Nullable": false,
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "EXTENDED",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -39,6 +42,7 @@
       "Nullable": false,
       "Default": "now()",
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "PLAIN",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -54,7 +58,12 @@
       "Clustered": false,
       "IndexColumns": "actor_id",
       "AccessMethod": "btree",
-      "ShouldApplyExpression": ""
+      "ShouldApplyExpression": "",
+      "FillFactor": 90,
+      "NullsNotDistinct": false,
+      "Deferrable": false,
+      "InitiallyDeferred": false,
+      "UpdateFillFactor": false
     },
     {
       "Name": "idx_actor_last_name",
@@ -64,11 +73,18 @@
       "Clustered": false,
       "IndexColumns": "last_name",
       "AccessMethod": "btree",
-      "ShouldApplyExpression": ""
+      "ShouldApplyExpression": "",
+      "FillFactor": 90,
+      "NullsNotDistinct": false,
+      "Deferrable": false,
+      "InitiallyDeferred": false,
+      "UpdateFillFactor": false
     }
   ],
   "ForeignKeys": [],
   "CheckConstraints": [],
+  "Statistics": [],
+  "ExcludeConstraints": [],
   "ShouldApplyExpression": "",
   "ContentFile": "Table Contents/public.actor.tabledata",
   "MergeType": "Insert/Update",
@@ -79,5 +95,7 @@
   "RowLevelSecurity": false,
   "ForceRowLevelSecurity": false,
   "AccessMethod": "heap",
-  "PersistenceType": "Logged"
+  "PersistenceType": "Logged",
+  "UpdateFillFactor": false,
+  "FillFactor": 100
 }

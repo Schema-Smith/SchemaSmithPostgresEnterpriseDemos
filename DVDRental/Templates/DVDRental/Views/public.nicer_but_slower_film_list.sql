@@ -1,4 +1,4 @@
-CREATE OR REPLACE VIEW public.nicer_but_slower_film_list AS
+CREATE OR REPLACE VIEW "public"."nicer_but_slower_film_list" AS
  SELECT film.film_id AS fid,
     film.title,
     film.description,

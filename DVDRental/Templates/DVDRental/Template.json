@@ -65,8 +65,8 @@
       "QuenchSlot": "After"
     }
   ],
-  "ServerToQuench": "Primary",
   "ScriptTokens": {},
   "UpdateFillFactor": true,
+  "Required": true,
   "BaselineValidationScript": ""
 }

@@ -101,11 +101,9 @@
       "UniqueConstraint": false,
       "Clustered": false,
       "IndexColumns": "address_id",
-      "IncludeColumns": "",
       "AccessMethod": "btree",
-      "FilterExpression": "",
       "ShouldApplyExpression": "",
-      "FillFactor": 0,
+      "FillFactor": 90,
       "NullsNotDistinct": false,
       "Deferrable": false,
       "InitiallyDeferred": false,
@@ -119,11 +117,9 @@
       "UniqueConstraint": false,
       "Clustered": false,
       "IndexColumns": "city_id",
-      "IncludeColumns": "",
       "AccessMethod": "btree",
-      "FilterExpression": "",
       "ShouldApplyExpression": "",
-      "FillFactor": 0,
+      "FillFactor": 90,
       "NullsNotDistinct": false,
       "Deferrable": false,
       "InitiallyDeferred": false,
@@ -143,41 +139,17 @@
       "UpdateAction": "",
       "Deferrable": false,
       "InitiallyDeferred": false,
-      "MatchType": "FULL"
+      "MatchType": "SIMPLE"
     }
   ],
   "CheckConstraints": [],
-  "Statistics": [
-    {
-      "Name": "ST_Test",
-      "Kind": "",
-      "StatisticsColumns": "address,address2,phone",
-      "ShouldApplyExpression": ""
-    }
-  ],
-  "ExcludeConstraints": [
-    {
-      "Name": "excl_Test",
-      "AccessMethod": "",
-      "ExcludeColumns": [
-        {
-          "Column": "address_id",
-          "Operator": "="
-        },
-        {
-          "Column": "lower(address::text)",
-          "Operator": "="
-        }
-      ],
-      "FilterExpression": "",
-      "ShouldApplyExpression": "",
-      "Deferrable": false,
-      "InitiallyDeferred": false
-    }
-  ],
+  "Statistics": [],
+  "ExcludeConstraints": [],
   "ShouldApplyExpression": "",
   "ContentFile": "Table Contents/public.address.tabledata",
   "MergeType": "Insert/Update",
+  "MatchColumns": "",
+  "MergeFilter": "",
   "MergeDisableTriggers": false,
   "MergeDisableRules": false,
   "MergeUpdateDescendents": false,
@@ -187,5 +159,5 @@
   "AccessMethod": "heap",
   "PersistenceType": "Logged",
   "UpdateFillFactor": false,
-  "FillFactor": 0
+  "FillFactor": 100
 }

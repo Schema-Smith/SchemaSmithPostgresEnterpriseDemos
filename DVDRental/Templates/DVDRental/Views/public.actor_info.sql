@@ -1,4 +1,4 @@
-CREATE OR REPLACE VIEW public.actor_info AS
+CREATE OR REPLACE VIEW "public"."actor_info" AS
  SELECT a.actor_id,
     a.first_name,
     a.last_name,

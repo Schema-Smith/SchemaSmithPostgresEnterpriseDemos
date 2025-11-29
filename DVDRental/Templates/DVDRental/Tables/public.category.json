@@ -8,6 +8,7 @@
       "Nullable": false,
       "Default": "nextval('category_category_id_seq'::regclass)",
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "PLAIN",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -19,6 +20,7 @@
       "Nullable": false,
       "Default": "now()",
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "PLAIN",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -29,6 +31,7 @@
       "DataType": "varchar(25)",
       "Nullable": false,
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "EXTENDED",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -44,11 +47,18 @@
       "Clustered": false,
       "IndexColumns": "category_id",
       "AccessMethod": "btree",
-      "ShouldApplyExpression": ""
+      "ShouldApplyExpression": "",
+      "FillFactor": 90,
+      "NullsNotDistinct": false,
+      "Deferrable": false,
+      "InitiallyDeferred": false,
+      "UpdateFillFactor": false
     }
   ],
   "ForeignKeys": [],
   "CheckConstraints": [],
+  "Statistics": [],
+  "ExcludeConstraints": [],
   "ShouldApplyExpression": "",
   "ContentFile": "Table Contents/public.category.tabledata",
   "MergeType": "Insert/Update",
@@ -59,5 +69,7 @@
   "RowLevelSecurity": false,
   "ForceRowLevelSecurity": false,
   "AccessMethod": "heap",
-  "PersistenceType": "Logged"
+  "PersistenceType": "Logged",
+  "UpdateFillFactor": false,
+  "FillFactor": 100
 }

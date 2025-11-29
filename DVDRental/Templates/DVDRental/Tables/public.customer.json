@@ -7,6 +7,7 @@
       "DataType": "int4",
       "Nullable": true,
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "PLAIN",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -18,6 +19,7 @@
       "Nullable": false,
       "Default": "true",
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "PLAIN",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -28,6 +30,7 @@
       "DataType": "int2",
       "Nullable": false,
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "PLAIN",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -39,6 +42,7 @@
       "Nullable": false,
       "Default": "('now'::text)::date",
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "PLAIN",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -50,6 +54,7 @@
       "Nullable": false,
       "Default": "nextval('customer_customer_id_seq'::regclass)",
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "PLAIN",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -60,6 +65,7 @@
       "DataType": "varchar(50)",
       "Nullable": true,
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "EXTENDED",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -70,6 +76,7 @@
       "DataType": "varchar(45)",
       "Nullable": false,
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "EXTENDED",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -80,6 +87,7 @@
       "DataType": "varchar(45)",
       "Nullable": false,
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "EXTENDED",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -91,6 +99,7 @@
       "Nullable": true,
       "Default": "now()",
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "PLAIN",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -101,6 +110,7 @@
       "DataType": "int2",
       "Nullable": false,
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "PLAIN",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -116,7 +126,12 @@
       "Clustered": false,
       "IndexColumns": "customer_id",
       "AccessMethod": "btree",
-      "ShouldApplyExpression": ""
+      "ShouldApplyExpression": "",
+      "FillFactor": 90,
+      "NullsNotDistinct": false,
+      "Deferrable": false,
+      "InitiallyDeferred": false,
+      "UpdateFillFactor": false
     },
     {
       "Name": "idx_fk_address_id",
@@ -126,7 +141,12 @@
       "Clustered": false,
       "IndexColumns": "address_id",
       "AccessMethod": "btree",
-      "ShouldApplyExpression": ""
+      "ShouldApplyExpression": "",
+      "FillFactor": 90,
+      "NullsNotDistinct": false,
+      "Deferrable": false,
+      "InitiallyDeferred": false,
+      "UpdateFillFactor": false
     },
     {
       "Name": "idx_fk_store_id",
@@ -136,7 +156,12 @@
       "Clustered": false,
       "IndexColumns": "store_id",
       "AccessMethod": "btree",
-      "ShouldApplyExpression": ""
+      "ShouldApplyExpression": "",
+      "FillFactor": 90,
+      "NullsNotDistinct": false,
+      "Deferrable": false,
+      "InitiallyDeferred": false,
+      "UpdateFillFactor": false
     },
     {
       "Name": "idx_last_name",
@@ -146,7 +171,12 @@
       "Clustered": false,
       "IndexColumns": "last_name",
       "AccessMethod": "btree",
-      "ShouldApplyExpression": ""
+      "ShouldApplyExpression": "",
+      "FillFactor": 90,
+      "NullsNotDistinct": false,
+      "Deferrable": false,
+      "InitiallyDeferred": false,
+      "UpdateFillFactor": false
     }
   ],
   "ForeignKeys": [
@@ -158,10 +188,15 @@
       "RelatedColumns": "address_id",
       "ShouldApplyExpression": "",
       "DeleteAction": "RESTRICT",
-      "UpdateAction": "CASCADE"
+      "UpdateAction": "CASCADE",
+      "Deferrable": false,
+      "InitiallyDeferred": false,
+      "MatchType": "SIMPLE"
     }
   ],
   "CheckConstraints": [],
+  "Statistics": [],
+  "ExcludeConstraints": [],
   "ShouldApplyExpression": "",
   "ContentFile": "Table Contents/public.customer.tabledata",
   "MergeType": "Insert/Update",
@@ -172,5 +207,7 @@
   "RowLevelSecurity": false,
   "ForceRowLevelSecurity": false,
   "AccessMethod": "heap",
-  "PersistenceType": "Logged"
+  "PersistenceType": "Logged",
+  "UpdateFillFactor": false,
+  "FillFactor": 100
 }

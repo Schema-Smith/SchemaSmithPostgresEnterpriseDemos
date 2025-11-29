@@ -1,4 +1,4 @@
-CREATE SEQUENCE IF NOT EXISTS public.customer_customer_id_seq
+CREATE SEQUENCE IF NOT EXISTS "public"."customer_customer_id_seq"
   AS BIGINT INCREMENT BY 1
   MINVALUE 1
   MAXVALUE 9223372036854775807

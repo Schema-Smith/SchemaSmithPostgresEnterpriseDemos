@@ -7,6 +7,7 @@
       "DataType": "int2",
       "Nullable": false,
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "PLAIN",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -17,6 +18,7 @@
       "DataType": "int2",
       "Nullable": false,
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "PLAIN",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -28,6 +30,7 @@
       "Nullable": false,
       "Default": "now()",
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "PLAIN",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -43,7 +46,12 @@
       "Clustered": false,
       "IndexColumns": "film_id,category_id",
       "AccessMethod": "btree",
-      "ShouldApplyExpression": ""
+      "ShouldApplyExpression": "",
+      "FillFactor": 90,
+      "NullsNotDistinct": false,
+      "Deferrable": false,
+      "InitiallyDeferred": false,
+      "UpdateFillFactor": false
     }
   ],
   "ForeignKeys": [
@@ -55,7 +63,10 @@
       "RelatedColumns": "category_id",
       "ShouldApplyExpression": "",
       "DeleteAction": "RESTRICT",
-      "UpdateAction": "CASCADE"
+      "UpdateAction": "CASCADE",
+      "Deferrable": false,
+      "InitiallyDeferred": false,
+      "MatchType": "SIMPLE"
     },
     {
       "Name": "film_category_film_id_fkey",
@@ -65,10 +76,15 @@
       "RelatedColumns": "film_id",
       "ShouldApplyExpression": "",
       "DeleteAction": "RESTRICT",
-      "UpdateAction": "CASCADE"
+      "UpdateAction": "CASCADE",
+      "Deferrable": false,
+      "InitiallyDeferred": false,
+      "MatchType": "SIMPLE"
     }
   ],
   "CheckConstraints": [],
+  "Statistics": [],
+  "ExcludeConstraints": [],
   "ShouldApplyExpression": "",
   "ContentFile": "Table Contents/public.film_category.tabledata",
   "MergeType": "Insert/Update",
@@ -79,5 +95,7 @@
   "RowLevelSecurity": false,
   "ForceRowLevelSecurity": false,
   "AccessMethod": "heap",
-  "PersistenceType": "Logged"
+  "PersistenceType": "Logged",
+  "UpdateFillFactor": false,
+  "FillFactor": 100
 }

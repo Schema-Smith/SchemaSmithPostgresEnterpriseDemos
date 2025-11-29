@@ -1,5 +1,5 @@
 {
-  "type": "object",
+    "type": "object",
     "properties": {
         "Schema": {
             "type": "string"
@@ -8,19 +8,22 @@
             "type": "string"
         },
         "AccessMethod": {
-          "type": "string"
+            "type": "string"
         },
         "PersistenceType": {
-          "type": "string"
+            "type": "string"
         },
-	    "RowLevelSecurity": {
+        "RowLevelSecurity": {
             "type": "boolean"
         },
-    	"ForceRowLevelSecurity": {
+        "ForceRowLevelSecurity": {
             "type": "boolean"
         },
         "UpdateFillFactor": {
             "type": "boolean"
+        },
+        "FillFactor": {
+            "type": "integer"
         },
         "ShouldApplyExpression": {
             "type": "string"
@@ -130,6 +133,9 @@
                     "IncludeColumns": {
                         "type": "string"
                     },
+                    "AccessMethod": {
+                        "type": "string"
+                    },
                     "FilterExpression": {
                         "type": "string"
                     },
@@ -186,6 +192,16 @@
                     "UpdateAction": {
                         "type": "string",
                         "pattern": "NO ACTION|CASCADE|SET NULL|SET DEFAULT"
+                    },
+                    "Deferrable": {
+                        "type": "boolean"
+                    },
+                    "InitiallyDeferred": {
+                        "type": "boolean"
+                    },
+                    "MatchType": {
+                        "type": "string",
+                        "pattern": "FULL|PARTIAL|SIMPLE"
                     }
                 },
                 "additionalProperties": false,
@@ -210,6 +226,12 @@
                     },
                     "ShouldApplyExpression": {
                         "type": "string"
+                    },
+                    "Deferrable": {
+                        "type": "boolean"
+                    },
+                    "InitiallyDeferred": {
+                        "type": "boolean"
                     }
                 },
                 "additionalProperties": false,
@@ -218,11 +240,86 @@
                     "Expression"
                 ]
             }
+        },
+        "Statistics": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Name": {
+                        "type": "string"
+                    },
+                    "Kind": {
+                        "type": "string"
+                    },
+                    "StatisticsColumns": {
+                        "type": "string"
+                    },
+                    "ShouldApplyExpression": {
+                        "type": "string"
+                    }
+                },
+                "additionalProperties": false,
+                "required": [
+                    "Name",
+                    "Expression"
+                ]
+            }
+        },
+        "ExcludeConstraints": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Name": {
+                        "type": "string"
+                    },
+                    "AccessMethod": {
+                        "type": "string"
+                    },
+                    "ExcludeColumns": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "Column": {
+                                    "type": "string"
+                                },
+                                "Operator": {
+                                    "type": "string"
+                                }
+                            },
+                            "additionalProperties": false,
+                            "required": [
+                                "Column",
+                                "Operator"
+                            ]
+                        }
+                    },
+                    "FilterExpression": {
+                        "type": "string"
+                    },
+                    "Deferrable": {
+                        "type": "boolean"
+                    },
+                    "InitiallyDeferred": {
+                        "type": "boolean"
+                    },
+                    "ShouldApplyExpression": {
+                        "type": "string"
+                    }
+                },
+                "additionalProperties": false,
+                "required": [
+                    "Name",
+                    "IndexColumns"
+                ]
+            }
         }
     },
-  "additionalProperties": false,
-  "required": [
-    "Name",
-    "Columns"
-  ]
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Columns"
+    ]
 }

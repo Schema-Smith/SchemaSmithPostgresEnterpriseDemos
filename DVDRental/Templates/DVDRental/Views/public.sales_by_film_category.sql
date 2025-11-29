@@ -1,4 +1,4 @@
-CREATE OR REPLACE VIEW public.sales_by_film_category AS
+CREATE OR REPLACE VIEW "public"."sales_by_film_category" AS
  SELECT c.name AS category,
     sum(p.amount) AS total_sales
    FROM (((((payment p

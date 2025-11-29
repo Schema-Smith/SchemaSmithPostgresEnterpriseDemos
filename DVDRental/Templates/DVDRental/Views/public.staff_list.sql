@@ -1,4 +1,4 @@
-CREATE OR REPLACE VIEW public.staff_list AS
+CREATE OR REPLACE VIEW "public"."staff_list" AS
  SELECT s.staff_id AS id,
     (((s.first_name)::text || ' '::text) || (s.last_name)::text) AS name,
     a.address,

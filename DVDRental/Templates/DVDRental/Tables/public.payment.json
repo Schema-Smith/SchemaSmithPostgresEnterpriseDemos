@@ -7,6 +7,7 @@
       "DataType": "numeric(5, 2)",
       "Nullable": false,
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "MAIN",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -17,6 +18,7 @@
       "DataType": "int2",
       "Nullable": false,
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "PLAIN",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -27,6 +29,7 @@
       "DataType": "timestamp",
       "Nullable": false,
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "PLAIN",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -38,6 +41,7 @@
       "Nullable": false,
       "Default": "nextval('payment_payment_id_seq'::regclass)",
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "PLAIN",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -48,6 +52,7 @@
       "DataType": "int4",
       "Nullable": false,
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "PLAIN",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -58,6 +63,7 @@
       "DataType": "int2",
       "Nullable": false,
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "PLAIN",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -73,7 +79,12 @@
       "Clustered": false,
       "IndexColumns": "customer_id",
       "AccessMethod": "btree",
-      "ShouldApplyExpression": ""
+      "ShouldApplyExpression": "",
+      "FillFactor": 90,
+      "NullsNotDistinct": false,
+      "Deferrable": false,
+      "InitiallyDeferred": false,
+      "UpdateFillFactor": false
     },
     {
       "Name": "idx_fk_rental_id",
@@ -83,7 +94,12 @@
       "Clustered": false,
       "IndexColumns": "rental_id",
       "AccessMethod": "btree",
-      "ShouldApplyExpression": ""
+      "ShouldApplyExpression": "",
+      "FillFactor": 90,
+      "NullsNotDistinct": false,
+      "Deferrable": false,
+      "InitiallyDeferred": false,
+      "UpdateFillFactor": false
     },
     {
       "Name": "idx_fk_staff_id",
@@ -93,7 +109,12 @@
       "Clustered": false,
       "IndexColumns": "staff_id",
       "AccessMethod": "btree",
-      "ShouldApplyExpression": ""
+      "ShouldApplyExpression": "",
+      "FillFactor": 90,
+      "NullsNotDistinct": false,
+      "Deferrable": false,
+      "InitiallyDeferred": false,
+      "UpdateFillFactor": false
     },
     {
       "Name": "payment_pkey",
@@ -103,7 +124,12 @@
       "Clustered": false,
       "IndexColumns": "payment_id",
       "AccessMethod": "btree",
-      "ShouldApplyExpression": ""
+      "ShouldApplyExpression": "",
+      "FillFactor": 90,
+      "NullsNotDistinct": false,
+      "Deferrable": false,
+      "InitiallyDeferred": false,
+      "UpdateFillFactor": false
     }
   ],
   "ForeignKeys": [
@@ -115,7 +141,10 @@
       "RelatedColumns": "customer_id",
       "ShouldApplyExpression": "",
       "DeleteAction": "RESTRICT",
-      "UpdateAction": "CASCADE"
+      "UpdateAction": "CASCADE",
+      "Deferrable": false,
+      "InitiallyDeferred": false,
+      "MatchType": "SIMPLE"
     },
     {
       "Name": "payment_rental_id_fkey",
@@ -125,7 +154,10 @@
       "RelatedColumns": "rental_id",
       "ShouldApplyExpression": "",
       "DeleteAction": "SET NULL",
-      "UpdateAction": "CASCADE"
+      "UpdateAction": "CASCADE",
+      "Deferrable": false,
+      "InitiallyDeferred": false,
+      "MatchType": "SIMPLE"
     },
     {
       "Name": "payment_staff_id_fkey",
@@ -135,10 +167,15 @@
       "RelatedColumns": "staff_id",
       "ShouldApplyExpression": "",
       "DeleteAction": "RESTRICT",
-      "UpdateAction": "CASCADE"
+      "UpdateAction": "CASCADE",
+      "Deferrable": false,
+      "InitiallyDeferred": false,
+      "MatchType": "SIMPLE"
     }
   ],
   "CheckConstraints": [],
+  "Statistics": [],
+  "ExcludeConstraints": [],
   "ShouldApplyExpression": "",
   "ContentFile": "Table Contents/public.payment.tabledata",
   "MergeType": "Insert/Update",
@@ -149,5 +186,7 @@
   "RowLevelSecurity": false,
   "ForceRowLevelSecurity": false,
   "AccessMethod": "heap",
-  "PersistenceType": "Logged"
+  "PersistenceType": "Logged",
+  "UpdateFillFactor": false,
+  "FillFactor": 100
 }

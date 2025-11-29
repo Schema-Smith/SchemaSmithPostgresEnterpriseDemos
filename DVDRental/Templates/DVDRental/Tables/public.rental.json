@@ -7,6 +7,7 @@
       "DataType": "int2",
       "Nullable": false,
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "PLAIN",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -17,6 +18,7 @@
       "DataType": "int4",
       "Nullable": false,
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "PLAIN",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -28,6 +30,7 @@
       "Nullable": false,
       "Default": "now()",
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "PLAIN",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -38,6 +41,7 @@
       "DataType": "timestamp",
       "Nullable": false,
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "PLAIN",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -49,6 +53,7 @@
       "Nullable": false,
       "Default": "nextval('rental_rental_id_seq'::regclass)",
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "PLAIN",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -59,6 +64,7 @@
       "DataType": "timestamp",
       "Nullable": true,
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "PLAIN",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -69,6 +75,7 @@
       "DataType": "int2",
       "Nullable": false,
       "Generated": "NEVER",
+      "Virtual": true,
       "Storage": "PLAIN",
       "Compression": "DEFAULT",
       "ShouldApplyExpression": "",
@@ -84,7 +91,12 @@
       "Clustered": false,
       "IndexColumns": "inventory_id",
       "AccessMethod": "btree",
-      "ShouldApplyExpression": ""
+      "ShouldApplyExpression": "",
+      "FillFactor": 90,
+      "NullsNotDistinct": false,
+      "Deferrable": false,
+      "InitiallyDeferred": false,
+      "UpdateFillFactor": false
     },
     {
       "Name": "idx_unq_rental_rental_date_inventory_id_customer_id",
@@ -94,7 +106,12 @@
       "Clustered": false,
       "IndexColumns": "rental_date,inventory_id,customer_id",
       "AccessMethod": "btree",
-      "ShouldApplyExpression": ""
+      "ShouldApplyExpression": "",
+      "FillFactor": 90,
+      "NullsNotDistinct": false,
+      "Deferrable": false,
+      "InitiallyDeferred": false,
+      "UpdateFillFactor": false
     },
     {
       "Name": "rental_pkey",
@@ -104,7 +121,12 @@
       "Clustered": false,
       "IndexColumns": "rental_id",
       "AccessMethod": "btree",
-      "ShouldApplyExpression": ""
+      "ShouldApplyExpression": "",
+      "FillFactor": 90,
+      "NullsNotDistinct": false,
+      "Deferrable": false,
+      "InitiallyDeferred": false,
+      "UpdateFillFactor": false
     }
   ],
   "ForeignKeys": [
@@ -116,7 +138,10 @@
       "RelatedColumns": "customer_id",
       "ShouldApplyExpression": "",
       "DeleteAction": "RESTRICT",
-      "UpdateAction": "CASCADE"
+      "UpdateAction": "CASCADE",
+      "Deferrable": false,
+      "InitiallyDeferred": false,
+      "MatchType": "SIMPLE"
     },
     {
       "Name": "rental_inventory_id_fkey",
@@ -126,7 +151,10 @@
       "RelatedColumns": "inventory_id",
       "ShouldApplyExpression": "",
       "DeleteAction": "RESTRICT",
-      "UpdateAction": "CASCADE"
+      "UpdateAction": "CASCADE",
+      "Deferrable": false,
+      "InitiallyDeferred": false,
+      "MatchType": "SIMPLE"
     },
     {
       "Name": "rental_staff_id_key",
@@ -136,10 +164,15 @@
       "RelatedColumns": "staff_id",
       "ShouldApplyExpression": "",
       "DeleteAction": "",
-      "UpdateAction": ""
+      "UpdateAction": "",
+      "Deferrable": false,
+      "InitiallyDeferred": false,
+      "MatchType": "SIMPLE"
     }
   ],
   "CheckConstraints": [],
+  "Statistics": [],
+  "ExcludeConstraints": [],
   "ShouldApplyExpression": "",
   "ContentFile": "Table Contents/public.rental.tabledata",
   "MergeType": "Insert/Update",
@@ -150,5 +183,7 @@
   "RowLevelSecurity": false,
   "ForceRowLevelSecurity": false,
   "AccessMethod": "heap",
-  "PersistenceType": "Logged"
+  "PersistenceType": "Logged",
+  "UpdateFillFactor": false,
+  "FillFactor": 100
 }

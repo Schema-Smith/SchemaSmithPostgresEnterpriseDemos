@@ -1,4 +1,4 @@
-CREATE OR REPLACE VIEW public.sales_by_store AS
+CREATE OR REPLACE VIEW "public"."sales_by_store" AS
  SELECT (((c.city)::text || ','::text) || (cy.country)::text) AS store,
     (((m.first_name)::text || ' '::text) || (m.last_name)::text) AS manager,
     sum(p.amount) AS total_sales
