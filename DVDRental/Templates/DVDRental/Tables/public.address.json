@@ -107,8 +107,7 @@
       "NullsNotDistinct": false,
       "Deferrable": false,
       "InitiallyDeferred": false,
-      "UpdateFillFactor": false,
-      "Inherit": false
+      "UpdateFillFactor": false
     },
     {
       "Name": "idx_fk_city_id",
@@ -123,8 +122,7 @@
       "NullsNotDistinct": false,
       "Deferrable": false,
       "InitiallyDeferred": false,
-      "UpdateFillFactor": false,
-      "Inherit": false
+      "UpdateFillFactor": false
     }
   ],
   "ForeignKeys": [
@@ -135,8 +133,6 @@
       "RelatedTable": "city",
       "RelatedColumns": "city_id",
       "ShouldApplyExpression": "",
-      "DeleteAction": "",
-      "UpdateAction": "",
       "Deferrable": false,
       "InitiallyDeferred": false,
       "MatchType": "SIMPLE"

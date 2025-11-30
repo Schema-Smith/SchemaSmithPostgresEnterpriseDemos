@@ -163,8 +163,6 @@
       "RelatedTable": "staff",
       "RelatedColumns": "staff_id",
       "ShouldApplyExpression": "",
-      "DeleteAction": "",
-      "UpdateAction": "",
       "Deferrable": false,
       "InitiallyDeferred": false,
       "MatchType": "SIMPLE"
