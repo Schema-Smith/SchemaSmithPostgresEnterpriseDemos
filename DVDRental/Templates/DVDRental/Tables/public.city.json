@@ -89,8 +89,6 @@
       "RelatedTable": "country",
       "RelatedColumns": "country_id",
       "ShouldApplyExpression": "",
-      "DeleteAction": "",
-      "UpdateAction": "",
       "Deferrable": false,
       "InitiallyDeferred": false,
       "MatchType": "SIMPLE"

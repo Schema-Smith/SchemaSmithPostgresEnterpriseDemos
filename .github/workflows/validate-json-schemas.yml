@@ -1,0 +1,22 @@
+name: json-yaml-validate
+on:
+  pull_request:
+
+permissions:
+  contents: read
+  pull-requests: write # enable write permissions for pull request comments
+
+jobs:
+  json-yaml-validate-dvdrental:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: json-yaml-validate-dvdrental
+        id: json-yaml-validate-dvdrental
+        uses: GrantBirki/json-yaml-validate@v2.6.0
+        with:
+          comment: "true" # enable comment mode
+          use_gitignore: "false"
+          json_schema: "./DVDRental/.json-schemas/tables.schema"
+          base_dir: "./DVDRental/Templates/DVDRental/Tables"
