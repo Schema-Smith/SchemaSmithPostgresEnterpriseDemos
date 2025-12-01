@@ -12,6 +12,19 @@ services:
       quench-validproduct: # Need to let this one finish first or risk a collision when boostrapping TestMain
         condition: service_completed_successfully
 
+  quench-northwind:
+    image: schemasmithyfree/schemaquenchpostgresenterprisedemo:latest
+    environment:
+      - SmithySettings_Target__Server=demoserver
+      - SmithySettings_Target__User=${PostGreSQL_USERNAME}
+      - SmithySettings_Target__Password=${PostGreSQL_PASSWORD}
+      - SmithySettings_SchemaPackagePath=/metadata
+    volumes:
+      - ./Northwind:/metadata
+    depends_on:
+      quench-validproduct: # Need to let this one finish first or risk a collision when boostrapping TestMain
+        condition: service_completed_successfully
+
   quench-validproduct:
     image: schemasmithyfree/schemaquenchpostgresenterprisedemo:latest
     environment:

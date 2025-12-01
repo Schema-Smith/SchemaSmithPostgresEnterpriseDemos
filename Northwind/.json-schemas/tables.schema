@@ -1,0 +1,325 @@
+{
+    "type": "object",
+    "properties": {
+        "Schema": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "AccessMethod": {
+            "type": "string"
+        },
+        "PersistenceType": {
+            "type": "string"
+        },
+        "RowLevelSecurity": {
+            "type": "boolean"
+        },
+        "ForceRowLevelSecurity": {
+            "type": "boolean"
+        },
+        "UpdateFillFactor": {
+            "type": "boolean"
+        },
+        "FillFactor": {
+            "type": "integer"
+        },
+        "ShouldApplyExpression": {
+            "type": "string"
+        },
+        "ContentFile": {
+            "type": "string"
+        },
+        "MergeType": {
+            "type": "string",
+            "pattern": "Insert|Insert/Update|Insert/Update/Delete"
+        },
+        "MatchColumns": {
+            "type": "string"
+        },
+        "MergeFilter": {
+            "type": "string"
+        },
+        "MergeDisableTriggers": {
+            "type": "boolean"
+        },
+        "MergeDisableRules": {
+            "type": "boolean"
+        },
+        "MergeUpdateDescendents": {
+            "type": "boolean"
+        },
+        "OldName": {
+            "type": "string"
+        },
+        "Columns": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Name": {
+                        "type": "string"
+                    },
+                    "DataType": {
+                        "type": "string"
+                    },
+                    "Nullable": {
+                        "type": "boolean"
+                    },
+                    "Default": {
+                        "type": "string"
+                    },
+                    "Generated": {
+                        "type": "string"
+                    },
+                    "GenerationExpression": {
+                        "type": "string"
+                    },
+                    "Virtual": {
+                        "type": "boolean"
+                    },
+                    "Collation": {
+                        "type": "string"
+                    },
+                    "Storage": {
+                        "type": "string"
+                    },
+                    "Compression": {
+                        "type": "string"
+                    },
+                    "ShouldApplyExpression": {
+                        "type": "string"
+                    },
+                    "OldName": {
+                        "type": "string"
+                    }
+                },
+                "additionalProperties": false,
+                "required": [
+                    "Name",
+                    "DataType"
+                ]
+            }
+        },
+        "Indexes": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Name": {
+                        "type": "string"
+                    },
+                    "PrimaryKey": {
+                        "type": "boolean"
+                    },
+                    "Unique": {
+                        "type": "boolean"
+                    },
+                    "UniqueConstraint": {
+                        "type": "boolean"
+                    },
+                    "Clustered": {
+                        "type": "boolean"
+                    },
+                    "FillFactor": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 100
+                    },
+                    "IndexColumns": {
+                        "type": "string"
+                    },
+                    "IncludeColumns": {
+                        "type": "string"
+                    },
+                    "AccessMethod": {
+                        "type": "string"
+                    },
+                    "FilterExpression": {
+                        "type": "string"
+                    },
+                    "UpdateFillFactor": {
+                        "type": "boolean"
+                    },
+                    "NullsNotDistinct": {
+                        "type": "boolean"
+                    },
+                    "Deferrable": {
+                        "type": "boolean"
+                    },
+                    "InitiallyDeferred": {
+                        "type": "boolean"
+                    },
+                    "ShouldApplyExpression": {
+                        "type": "string"
+                    }
+                },
+                "additionalProperties": false,
+                "required": [
+                    "Name",
+                    "IndexColumns"
+                ]
+            }
+        },
+        "ForeignKeys": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Name": {
+                        "type": "string"
+                    },
+                    "Columns": {
+                        "type": "string"
+                    },
+                    "RelatedTableSchema": {
+                        "type": "string"
+                    },
+                    "RelatedTable": {
+                        "type": "string"
+                    },
+                    "RelatedColumns": {
+                        "type": "string"
+                    },
+                    "ShouldApplyExpression": {
+                        "type": "string"
+                    },
+                    "DeleteAction": {
+                        "type": "string",
+                        "pattern": "NO ACTION|RESTRICT|CASCADE|SET NULL|SET DEFAULT"
+                    },
+                    "UpdateAction": {
+                        "type": "string",
+                        "pattern": "NO ACTION|RESTRICT|CASCADE|SET NULL|SET DEFAULT"
+                    },
+                    "Deferrable": {
+                        "type": "boolean"
+                    },
+                    "InitiallyDeferred": {
+                        "type": "boolean"
+                    },
+                    "MatchType": {
+                        "type": "string",
+                        "pattern": "FULL|PARTIAL|SIMPLE"
+                    }
+                },
+                "additionalProperties": false,
+                "required": [
+                    "Name",
+                    "Columns",
+                    "RelatedTable",
+                    "RelatedColumns"
+                ]
+            }
+        },
+        "CheckConstraints": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Name": {
+                        "type": "string"
+                    },
+                    "Expression": {
+                        "type": "string"
+                    },
+                    "ShouldApplyExpression": {
+                        "type": "string"
+                    },
+                    "Deferrable": {
+                        "type": "boolean"
+                    },
+                    "InitiallyDeferred": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false,
+                "required": [
+                    "Name",
+                    "Expression"
+                ]
+            }
+        },
+        "Statistics": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Name": {
+                        "type": "string"
+                    },
+                    "Kind": {
+                        "type": "string"
+                    },
+                    "StatisticsColumns": {
+                        "type": "string"
+                    },
+                    "ShouldApplyExpression": {
+                        "type": "string"
+                    }
+                },
+                "additionalProperties": false,
+                "required": [
+                    "Name",
+                    "StatisticsColumns"
+                ]
+            }
+        },
+        "ExcludeConstraints": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Name": {
+                        "type": "string"
+                    },
+                    "AccessMethod": {
+                        "type": "string"
+                    },
+                    "ExcludeColumns": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "Column": {
+                                    "type": "string"
+                                },
+                                "Operator": {
+                                    "type": "string"
+                                }
+                            },
+                            "additionalProperties": false,
+                            "required": [
+                                "Column",
+                                "Operator"
+                            ]
+                        }
+                    },
+                    "FilterExpression": {
+                        "type": "string"
+                    },
+                    "Deferrable": {
+                        "type": "boolean"
+                    },
+                    "InitiallyDeferred": {
+                        "type": "boolean"
+                    },
+                    "ShouldApplyExpression": {
+                        "type": "string"
+                    }
+                },
+                "additionalProperties": false,
+                "required": [
+                    "Name",
+                    "ExcludeColumns"
+                ]
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Columns"
+    ]
+}

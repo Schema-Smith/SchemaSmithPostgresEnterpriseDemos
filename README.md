@@ -6,10 +6,11 @@ The SchemaSmithPostgresEnterpriseDemos repository is a collection of demonstrati
 
 Each demo is self contained in one of the following subfolders
 
-| Demo           | Status |
-| -------------- | ------ |
-| ValidProduct   | Done |
-| DVDRental      | Done |
+| Demo         | Status | Author                                  |
+|--------------| ------ |-----------------------------------------|
+| ValidProduct | Done | SchemaSmith test product                |
+| DVDRental    | Done |                                         |
+| Northwind    | Done | https://github.com/pthom/northwind_psql |
 
 ## Quick Start Guide
 
