@@ -1,0 +1,55 @@
+{
+  "type": "object",
+    "properties": {
+        "Name": {
+            "type": "string"
+        },
+        "DatabaseIdentificationScript": {
+            "type": "string"
+        },
+        "VersionStampScript": {
+            "type": "string"
+        },
+        "IndexOnlyTableQuenches": {
+            "type": "boolean"
+        },
+        "ScriptFolders": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "FolderPath": {
+                        "type": "string"
+                    },
+                    "QuenchSlot": {
+                        "type": "string",
+                        "enum": [ "Before", "Objects", "AfterTablesObjects", "After" ]
+                    }
+                },
+                "additionalProperties": false,
+                "required": [
+                    "FolderPath",
+                    "QuenchSlot"
+                ]
+            }
+        },
+        "ScriptTokens": {
+            "type": "object"
+        },
+        "UpdateFillFactor": {
+            "type": "boolean"
+        },
+        "Required": {
+            "type": "boolean"
+        },
+        "BaselineValidationScript": {
+            "type": "string"
+        }
+    },
+  "additionalProperties": false,
+  "required": [
+    "Name",
+    "DatabaseIdentificationScript",
+    "ServerToQuench"
+  ]
+}
