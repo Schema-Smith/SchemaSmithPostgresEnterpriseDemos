@@ -4,7 +4,7 @@
   "Columns": [
     {
       "Name": "accountnumber",
-      "DataType": "\"public\".\"AccountNumber\"(15)",
+      "DataType": "\"public\".\"AccountNumber\"",
       "Nullable": true,
       "Generated": "NEVER",
       "Virtual": true,
@@ -139,7 +139,7 @@
     },
     {
       "Name": "purchaseordernumber",
-      "DataType": "\"public\".\"OrderNumber\"(25)",
+      "DataType": "\"public\".\"OrderNumber\"",
       "Nullable": true,
       "Generated": "NEVER",
       "Virtual": true,

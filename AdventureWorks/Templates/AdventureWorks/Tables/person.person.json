@@ -49,7 +49,7 @@
     },
     {
       "Name": "firstname",
-      "DataType": "\"public\".\"Name\"(50)",
+      "DataType": "\"public\".\"Name\"",
       "Nullable": false,
       "Generated": "NEVER",
       "Virtual": true,
@@ -60,7 +60,7 @@
     },
     {
       "Name": "lastname",
-      "DataType": "\"public\".\"Name\"(50)",
+      "DataType": "\"public\".\"Name\"",
       "Nullable": false,
       "Generated": "NEVER",
       "Virtual": true,
@@ -71,7 +71,7 @@
     },
     {
       "Name": "middlename",
-      "DataType": "\"public\".\"Name\"(50)",
+      "DataType": "\"public\".\"Name\"",
       "Nullable": true,
       "Generated": "NEVER",
       "Virtual": true,

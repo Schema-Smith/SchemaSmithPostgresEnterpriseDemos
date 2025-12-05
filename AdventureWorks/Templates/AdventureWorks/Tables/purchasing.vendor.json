@@ -4,7 +4,7 @@
   "Columns": [
     {
       "Name": "accountnumber",
-      "DataType": "\"public\".\"AccountNumber\"(15)",
+      "DataType": "\"public\".\"AccountNumber\"",
       "Nullable": false,
       "Generated": "NEVER",
       "Virtual": true,
@@ -61,7 +61,7 @@
     },
     {
       "Name": "name",
-      "DataType": "\"public\".\"Name\"(50)",
+      "DataType": "\"public\".\"Name\"",
       "Nullable": false,
       "Generated": "NEVER",
       "Virtual": true,

@@ -27,7 +27,7 @@
     },
     {
       "Name": "phonenumber",
-      "DataType": "\"public\".\"Phone\"(25)",
+      "DataType": "\"public\".\"Phone\"",
       "Nullable": false,
       "Generated": "NEVER",
       "Virtual": true,

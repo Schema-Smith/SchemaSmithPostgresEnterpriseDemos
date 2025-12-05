@@ -94,7 +94,7 @@
     },
     {
       "Name": "name",
-      "DataType": "\"public\".\"Name\"(50)",
+      "DataType": "\"public\".\"Name\"",
       "Nullable": false,
       "Generated": "NEVER",
       "Virtual": true,
