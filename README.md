@@ -11,6 +11,7 @@ Each demo is self contained in one of the following subfolders
 | ValidProduct | Done | SchemaSmith test product                |
 | DVDRental    | Done |                                         |
 | Northwind    | Done | https://github.com/pthom/northwind_psql |
+| AdventureWorks | Done | https://github.com/lorint/AdventureWorks-for-Postgres |
 
 ## Quick Start Guide
 
