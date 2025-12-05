@@ -60,6 +60,7 @@
     },
     {
       "Name": "listprice",
+      "DataType": "numeric",
       "Nullable": false,
       "Generated": "NEVER",
       "Virtual": true,
@@ -239,6 +240,7 @@
     },
     {
       "Name": "standardcost",
+      "DataType": "numeric",
       "Nullable": false,
       "Generated": "NEVER",
       "Virtual": true,

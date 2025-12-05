@@ -4,6 +4,7 @@
   "Columns": [
     {
       "Name": "actualcost",
+      "DataType": "numeric",
       "Nullable": true,
       "Generated": "NEVER",
       "Virtual": true,
@@ -81,6 +82,7 @@
     },
     {
       "Name": "plannedcost",
+      "DataType": "numeric",
       "Nullable": false,
       "Generated": "NEVER",
       "Virtual": true,

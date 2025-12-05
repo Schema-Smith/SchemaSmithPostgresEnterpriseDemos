@@ -15,6 +15,7 @@
     },
     {
       "Name": "listprice",
+      "DataType": "numeric",
       "Nullable": false,
       "Generated": "NEVER",
       "Virtual": true,

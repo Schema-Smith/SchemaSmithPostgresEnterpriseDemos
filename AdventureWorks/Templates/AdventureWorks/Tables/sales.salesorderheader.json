@@ -92,6 +92,7 @@
     },
     {
       "Name": "freight",
+      "DataType": "numeric",
       "Nullable": false,
       "Default": "0.00",
       "Generated": "NEVER",
@@ -242,6 +243,7 @@
     },
     {
       "Name": "subtotal",
+      "DataType": "numeric",
       "Nullable": false,
       "Default": "0.00",
       "Generated": "NEVER",
@@ -253,6 +255,7 @@
     },
     {
       "Name": "taxamt",
+      "DataType": "numeric",
       "Nullable": false,
       "Default": "0.00",
       "Generated": "NEVER",
@@ -275,6 +278,7 @@
     },
     {
       "Name": "totaldue",
+      "DataType": "numeric",
       "Nullable": true,
       "Generated": "NEVER",
       "Virtual": true,

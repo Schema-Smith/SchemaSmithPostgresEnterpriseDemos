@@ -4,6 +4,7 @@
   "Columns": [
     {
       "Name": "averagerate",
+      "DataType": "numeric",
       "Nullable": false,
       "Generated": "NEVER",
       "Virtual": true,
@@ -37,6 +38,7 @@
     },
     {
       "Name": "endofdayrate",
+      "DataType": "numeric",
       "Nullable": false,
       "Generated": "NEVER",
       "Virtual": true,

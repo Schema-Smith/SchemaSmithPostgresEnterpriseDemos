@@ -38,6 +38,7 @@
     },
     {
       "Name": "rate",
+      "DataType": "numeric",
       "Nullable": false,
       "Generated": "NEVER",
       "Virtual": true,

@@ -94,6 +94,7 @@
     },
     {
       "Name": "unitprice",
+      "DataType": "numeric",
       "Nullable": false,
       "Generated": "NEVER",
       "Virtual": true,

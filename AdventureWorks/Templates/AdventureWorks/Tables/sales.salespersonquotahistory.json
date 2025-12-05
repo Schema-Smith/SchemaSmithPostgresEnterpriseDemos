@@ -50,6 +50,7 @@
     },
     {
       "Name": "salesquota",
+      "DataType": "numeric",
       "Nullable": false,
       "Generated": "NEVER",
       "Virtual": true,

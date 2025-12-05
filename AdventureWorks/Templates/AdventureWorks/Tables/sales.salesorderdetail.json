@@ -95,6 +95,7 @@
     },
     {
       "Name": "unitprice",
+      "DataType": "numeric",
       "Nullable": false,
       "Generated": "NEVER",
       "Virtual": true,
@@ -105,6 +106,7 @@
     },
     {
       "Name": "unitpricediscount",
+      "DataType": "numeric",
       "Nullable": false,
       "Default": "0.0",
       "Generated": "NEVER",

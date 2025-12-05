@@ -4,6 +4,7 @@
   "Columns": [
     {
       "Name": "costlastyear",
+      "DataType": "numeric",
       "Nullable": false,
       "Default": "0.00",
       "Generated": "NEVER",
@@ -15,6 +16,7 @@
     },
     {
       "Name": "costytd",
+      "DataType": "numeric",
       "Nullable": false,
       "Default": "0.00",
       "Generated": "NEVER",
@@ -83,6 +85,7 @@
     },
     {
       "Name": "saleslastyear",
+      "DataType": "numeric",
       "Nullable": false,
       "Default": "0.00",
       "Generated": "NEVER",
@@ -94,6 +97,7 @@
     },
     {
       "Name": "salesytd",
+      "DataType": "numeric",
       "Nullable": false,
       "Default": "0.00",
       "Generated": "NEVER",

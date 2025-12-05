@@ -4,6 +4,7 @@
   "Columns": [
     {
       "Name": "actualcost",
+      "DataType": "numeric",
       "Nullable": false,
       "Generated": "NEVER",
       "Virtual": true,

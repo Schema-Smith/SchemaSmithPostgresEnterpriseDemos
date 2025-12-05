@@ -62,6 +62,7 @@
     },
     {
       "Name": "taxrate",
+      "DataType": "numeric",
       "Nullable": false,
       "Default": "0.00",
       "Generated": "NEVER",

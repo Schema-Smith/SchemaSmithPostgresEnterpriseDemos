@@ -39,6 +39,7 @@
     },
     {
       "Name": "shipbase",
+      "DataType": "numeric",
       "Nullable": false,
       "Default": "0.00",
       "Generated": "NEVER",
@@ -62,6 +63,7 @@
     },
     {
       "Name": "shiprate",
+      "DataType": "numeric",
       "Nullable": false,
       "Default": "0.00",
       "Generated": "NEVER",
